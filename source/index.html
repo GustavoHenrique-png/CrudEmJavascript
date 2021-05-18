@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./estilo.css">
+    <link rel="stylesheet" href="./estilos/reset.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
     <title>Biscoitinho</title>
@@ -38,33 +39,32 @@
         </tbody> 
     </table>
 
-    <a class="waves-effect waves-light btn-large" id="#" >Buscar paciente</a>
-
+        <a class="waves-effect waves-light btn-large" id="#" >Buscar paciente</a>
 
     <div class="row">
-        <form class="col s12">
+        <form class="col s12" id="adicionaPaciente">
           <div class="row">
             <div class="input-field col s6">
-              <input id="Nome" type="text" class="validate">
-              <label for="Nome">Digite seu nome</label>
+              <input id="nome" type="text" class="validate">
+              <label for="nome">Digite seu nome</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s6">
-              <input id="Peso" type="text" class="validate">
-              <label for="Peso">Digite seu peso</label>
+              <input id="peso" type="text" class="validate">
+              <label for="peso">Digite seu peso</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s6">
-              <input id="Altura" type="text" class="validate">
-              <label for="Altura">Digite sua altura</label>
+              <input id="altura" type="text" class="validate">
+              <label for="altura">Digite sua altura</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s6">
-              <input id="GorduraCorporal" type="text" class="validate">
-              <label for="GorduraCorporal">Digite sua Gordura corporal</label>
+              <input id="gordura" type="text" class="validate">
+              <label for="gordura">Digite sua Gordura corporal</label>
             </div>
           </div>
         </form>
@@ -74,6 +74,7 @@
     <a class="waves-effect waves-light btn-large" id="botao" >Registrar</a>
    
  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+ <script src="./scripts/adiciona.js"></script>
 
 </body>
 </html>
