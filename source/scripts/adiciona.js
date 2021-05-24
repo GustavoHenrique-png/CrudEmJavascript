@@ -1,4 +1,4 @@
-var botaoAdicionar = document.querySelector('a#botao')
+var botaoAdicionar = document.querySelector('a#teuCu')
 
 botaoAdicionar.addEventListener("click", function(event){
 
@@ -9,6 +9,15 @@ botaoAdicionar.addEventListener("click", function(event){
 
 })
 
+/*function botaoAdiciona(){
+
+    var formularioAdiciona = document.querySelector("form#adicionaPaciente")
+    var paciente = obterpacienteFormulario(formularioAdiciona)
+
+    adicionaPaciente(paciente)
+
+}*/
+
 function obterpacienteFormulario(form){
 
     var paciente = {
@@ -16,7 +25,7 @@ function obterpacienteFormulario(form){
         altura:form.altura.value,
         nome:form.nome.value,
         gordura:form.gordura.value,
-        imc:calculaIMC(form.peso.value,form.altura.value)
+        //imc:calculaIMC(form.peso.value,form.altura.value)
     }
 
     return paciente
@@ -25,19 +34,22 @@ function obterpacienteFormulario(form){
 
 function adicionaPaciente(paciente){
     var pacienteTr = montaLinha(paciente)
+    var tabela = document.querySelector('table#TabelaPacientes')
+    tabela.appendChild(pacienteTr)
+
 }
 
 function montaLinha(paciente){
     var pacienteTr = document.createElement("tr")
     pacienteTr.classList.add("paciente")
 
-    pacienteTr.appendChild(montaCelula(paciente.nome))
-    pacienteTr.appendChild(montaCelula(paciente.peso))
-    pacienteTr.appendChild(montaCelula(paciente.altura))
-    pacienteTr.appendChild(montaCelula(paciente.gordura))
-    pacienteTr.appendChild(montaCelula(paciente.imc))
+    pacienteTr.appendChild(montaCelula(paciente.nome,'info-nome'))
+    pacienteTr.appendChild(montaCelula(paciente.peso,'info-peso'))
+    pacienteTr.appendChild(montaCelula(paciente.altura,'info-altura'))
+    pacienteTr.appendChild(montaCelula(paciente.gordura,'info-gordura'))
+    pacienteTr.appendChild(montaCelula(paciente.imc,'info-imc'))
 
-
+    return pacienteTr
 
 }
 
