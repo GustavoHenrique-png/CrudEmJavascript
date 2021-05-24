@@ -9,14 +9,7 @@ botaoAdicionar.addEventListener("click", function(event){
 
 })
 
-/*function botaoAdiciona(){
 
-    var formularioAdiciona = document.querySelector("form#adicionaPaciente")
-    var paciente = obterpacienteFormulario(formularioAdiciona)
-
-    adicionaPaciente(paciente)
-
-}*/
 
 function obterpacienteFormulario(form){
 
@@ -25,7 +18,7 @@ function obterpacienteFormulario(form){
         altura:form.altura.value,
         nome:form.nome.value,
         gordura:form.gordura.value,
-        //imc:calculaIMC(form.peso.value,form.altura.value)
+        imc:calculaImc(form.peso.value,form.altura.value)
     }
 
     return paciente
@@ -62,4 +55,10 @@ function montaCelula(conteudo,classe){
 
     return elemento
 
+}
+
+function calculaImc(peso,altura){
+    var imc = 0
+    imc = peso / (altura * altura);
+    return imc.toFixed(2);
 }
