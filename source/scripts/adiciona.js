@@ -27,7 +27,7 @@ function obterpacienteFormulario(form){
 
 function adicionaPaciente(paciente){
     var pacienteTr = montaLinha(paciente)
-    var tabela = document.querySelector('table#TabelaPacientes')
+    var tabela = document.querySelector('#TabelaPacientes')
     tabela.appendChild(pacienteTr)
 
 }
@@ -36,14 +36,13 @@ function montaLinha(paciente){
     var pacienteTr = document.createElement("tr")
     pacienteTr.classList.add("paciente")
 
-    pacienteTr.appendChild(montaCelula(paciente.nome,'info-nome'))
-    pacienteTr.appendChild(montaCelula(paciente.peso,'info-peso'))
-    pacienteTr.appendChild(montaCelula(paciente.altura,'info-altura'))
-    pacienteTr.appendChild(montaCelula(paciente.gordura,'info-gordura'))
-    pacienteTr.appendChild(montaCelula(paciente.imc,'info-imc'))
+     pacienteTr.appendChild(montaCelula(paciente.nome,'info-nome'))
+     pacienteTr.appendChild(montaCelula(paciente.peso,'info-peso'))
+     pacienteTr.appendChild(montaCelula(paciente.altura,'info-altura'))
+     pacienteTr.appendChild(montaCelula(paciente.gordura,'info-gordura'))
+     pacienteTr.appendChild(montaCelula(paciente.imc,'info-imc'))
 
-    return pacienteTr
-
+     return pacienteTr
 }
 
 function montaCelula(conteudo,classe){
@@ -55,10 +54,4 @@ function montaCelula(conteudo,classe){
 
     return elemento
 
-}
-
-function calculaImc(peso,altura){
-    var imc = 0
-    imc = peso / (altura * altura);
-    return imc.toFixed(2);
 }
