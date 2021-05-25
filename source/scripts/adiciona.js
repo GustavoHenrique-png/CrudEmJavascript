@@ -7,6 +7,19 @@ botaoAdicionar.addEventListener("click", function(event){
 
     adicionaPaciente(paciente)
 
+    var errors = validaPaciente(paciente); 
+    if(errors.length > 0){
+        exibeMensagensDeErro(errors);
+        return;
+    }
+
+
+    adicionaPaciente(paciente);
+    formAdiciona.reset();
+    var ul = document.querySelector("#mensagens-de-erro");
+    ul.innerHTML = "";
+
+
 })
 
 
@@ -54,4 +67,37 @@ function montaCelula(conteudo,classe){
 
     return elemento
 
+}
+
+function validaPaciente(paciente){
+    var errors = []
+    if(!validaPeso(paciente.peso)){
+        errors.push("Peso Inválido");
+    }
+    if(!validaAltura(paciente.altura)){
+        errors.push("Altura inválida");
+    }
+    if(paciente.nome.length == 0){
+        errors.push("Nome não pode ser em branco");
+    }
+    if(paciente.gordura.length ==0){
+        errors.push("Gordura não pode ser em branco");
+    }
+    if(paciente.peso.length ==0){
+        errors.push("Peso não pode ser em branco");
+    }
+    if(paciente.altura.length ==0){
+        errors.push("Altura não pode ser em branco");
+    }
+    return errors;
+}
+
+function exibeMensagensDeErro(errors){
+    var ul = document.querySelector("#mensagens-de-erro");
+    ul.innerHTML = "";
+    errors.forEach(function(error){
+        var li = document.createElement("li");
+        li.textContent = error;
+        ul.appendChild(li)
+    });
 }
