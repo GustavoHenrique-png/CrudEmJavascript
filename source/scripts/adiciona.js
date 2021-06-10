@@ -5,21 +5,21 @@ botaoAdicionar.addEventListener("click", function(event){
     var formularioAdiciona = document.querySelector("form#adicionaPaciente")
     var paciente = obterpacienteFormulario(formularioAdiciona)
 
-    adicionaPaciente(paciente)
-
     var errors = validaPaciente(paciente); 
     if(errors.length > 0){
         exibeMensagensDeErro(errors);
         return;
     }
 
+    else{
 
-    adicionaPaciente(paciente);
-    formAdiciona.reset();
-    var ul = document.querySelector("#mensagens-de-erro");
-    ul.innerHTML = "";
+        adicionaPaciente(paciente);
+        formAdiciona.reset()
+        var ul = document.querySelector("#mensagens-de-erro")
+        ul.innerHTML = ""
 
-
+    }
+    
 })
 
 
